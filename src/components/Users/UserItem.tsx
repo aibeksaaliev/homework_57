@@ -1,15 +1,20 @@
 import React from 'react';
+import {Profile} from "../../types";
 
-const UserItem = () => {
+interface UserItemProps {
+  profile: Profile;
+}
+
+const UserItem: React.FC<UserItemProps> = ({profile}) => {
   return (
     <div className="card">
       <div className="card-header">
-        <span>Role</span>
+        <span>{profile.role}</span>
       </div>
       <div className="card-body">
-        <h5 className="card-title">Name</h5>
-        <p className="card-text">E-mail</p>
-        <span>Active</span>
+        <h5 className="card-title">{profile.name}</h5>
+        <p className="card-text">{profile.email}</p>
+        <span>{profile.status ? "Active" : "Not active"}</span>
       </div>
     </div>
   );
