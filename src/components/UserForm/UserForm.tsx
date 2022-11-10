@@ -36,12 +36,13 @@ const UserForm: React.FC<UserFormProps> = ({onSubmit}) => {
 
   return (
     <form onSubmit={onFormSubmit}>
-      <h4>Add new user</h4>
+      <h4 className="text-uppercase text-center">Add new user</h4>
         <div>
           <label htmlFor="name">Name</label>
           <input
             id="name"
             name="name"
+            required
             className="form-control bg-white bg-opacity-50"
             type="text"
             onChange={onProfileChange}
@@ -52,6 +53,7 @@ const UserForm: React.FC<UserFormProps> = ({onSubmit}) => {
         <input
           id="email"
           name="email"
+          required
           className="form-control bg-white bg-opacity-50"
           type="email"
           onChange={onProfileChange}
@@ -62,25 +64,27 @@ const UserForm: React.FC<UserFormProps> = ({onSubmit}) => {
         <select
           name="role"
           id="role"
+          required
           className="form-control bg-white bg-opacity-50"
           onChange={onProfileChange}>
-          <option selected>Choose a role</option>
+          <option disabled selected value="">Choose a role</option>
           <option value="user">User</option>
           <option value="editor">Editor</option>
           <option value="admin">Admin</option>
         </select>
       </div>
-      <div className="form-control">
+      <div className="form-control w-50 bg-white bg-opacity-50 my-3 mx-auto">
+        <label htmlFor="status">
         <input
           type="checkbox"
           name="status"
-          className="btn-check bg-white bg-opacity-50"
+          className="bg-white bg-opacity-50 mx-3"
           id="status"
           onChange={onStatusChange}
         />
-        <label className="btn btn-outline-primary" htmlFor="status">Active</label>
+        Active</label>
       </div>
-      <button type="submit" className="btn btn-primary">Add</button>
+      <button type="submit" className="btn btn-primary w-50 mx-auto d-block bg-dark">Add</button>
     </form>
   );
 };

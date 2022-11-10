@@ -14,10 +14,10 @@ function App() {
     <>
       <main className="container-fluid h-100">
         <div className="row">
-          <div className="col-3 bg-warning bg-gradient vh-100">
+          <div className="col-3 bg-warning bg-gradient vh-100 pt-5">
             <UserForm onSubmit={addProfile}/>
           </div>
-          <div className="col">
+          <div className="col bg-dark pt-5 overflow-scroll vh-100">
             <Users profiles={profiles}/>
           </div>
         </div>
