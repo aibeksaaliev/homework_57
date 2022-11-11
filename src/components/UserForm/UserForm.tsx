@@ -32,6 +32,8 @@ const UserForm: React.FC<UserFormProps> = ({onSubmit}) => {
       id: Math.random().toString(),
       ...profile
     })
+
+    setProfile({name: "", email: "", role: "", status:false});
   }
 
   return (
@@ -42,6 +44,7 @@ const UserForm: React.FC<UserFormProps> = ({onSubmit}) => {
           <input
             id="name"
             name="name"
+            value={profile.name}
             required
             className="form-control bg-white bg-opacity-50"
             type="text"
@@ -53,6 +56,7 @@ const UserForm: React.FC<UserFormProps> = ({onSubmit}) => {
         <input
           id="email"
           name="email"
+          value={profile.email}
           required
           className="form-control bg-white bg-opacity-50"
           type="email"
@@ -64,6 +68,7 @@ const UserForm: React.FC<UserFormProps> = ({onSubmit}) => {
         <select
           name="role"
           id="role"
+          value={profile.role}
           required
           className="form-control bg-white bg-opacity-50"
           onChange={onProfileChange}>
